@@ -178,6 +178,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
 
 bindsym $mod+t exec xfce4-terminal
