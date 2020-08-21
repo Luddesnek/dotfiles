@@ -184,4 +184,4 @@ bar {
 bindsym $mod+t exec xfce4-terminal
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 239.76 --output DVI-D-0 --mode 1920x1080 --rate 60.00 --right-of DP-2
-
+new_window pixel1
