@@ -1,7 +1,5 @@
 # i3-config
 my i3 configuration
 
+config file is my main i3 config the i3bar is the i3bar and the hosts is a list of blocked ads and is used to block ads on spotify
 
-In Fedora for me 
-i3bar config in etc folder
-and main config in .config/i3
