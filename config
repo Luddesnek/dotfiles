@@ -175,4 +175,5 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xrandr --output DP-2 --primary --mode 1920x1080 --rate 239.76 --output DVI-D-0 --mode 1920x1080 --rate 60.00 --right-of DP-2
 exec --no-startup-id albert
 new_window pixel1
+bindsym $mod+Shift+e exec --no-startup-id arcolinux-logout
 
