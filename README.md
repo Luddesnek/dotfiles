@@ -1,6 +1,2 @@
-# my linux dotfiles
-
-Including:
-my i3 configuration etc.
-
+# My linux configuration dotfiles for: i3, dmenu, polybar, fish 
 
