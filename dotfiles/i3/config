@@ -198,16 +198,14 @@ exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --primary --rate 23
 #--output DVI-D-0 --mode 1920x1080 --rate 60.00 --right-of-HDMI-1 
 exec --no-startup-id albert
 exec --no-startup-id nitrogen --restore
-new_window pixel0
 exec --no-startup-id xset -dpms s off
-exec --no-startup-id sudo mount /dev/sda3 /home/lu/Fatty
-exec --no-startup-id sudo mount /dev/sda1 /home/lu/Shadow\ Fatty/
 exec fcitx -d
 exec picom 
 
 gaps inner 5
 gaps outer 10
 for_window [class="^.*"] border pixel 0
+new_window pixel0
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #444444 #285577 #ffffff #2e9ef4   #444444
