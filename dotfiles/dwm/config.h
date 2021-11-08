@@ -8,7 +8,24 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Ubuntu Mono:size=13" };
 static const char dmenufont[]       = "Ubuntu Mono:size=13";
 
-#include "/home/lu/.cache/wal/colors-wal-dwm.h"
+static const char norm_fg[] = "#d8b4c2";
+static const char norm_bg[] = "#0E0D0E";
+static const char norm_border[] = "#977d87";
+
+static const char sel_fg[] = "#d8b4c2";
+static const char sel_bg[] = "#56476E";
+static const char sel_border[] = "#d8b4c2";
+
+static const char urg_fg[] = "#d8b4c2";
+static const char urg_bg[] = "#3E4155";
+static const char urg_border[] = "#3E4155";
+
+static const char *colors[][3]      = {
+	    /*               fg           bg         border                         */
+	    [SchemeNorm] = { norm_fg,     norm_bg,   norm_border }, // unfocused wins
+	    [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win
+};
+
 
 /* tagging */
 static const char *tags[] = { "~>", "www", "三", "四", "五", "六" };
