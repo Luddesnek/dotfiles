@@ -1,3 +1,3 @@
 #!/bin/fish
 
-date | awk '{print $5 " ]" }' 
+date "+%R ]" 
