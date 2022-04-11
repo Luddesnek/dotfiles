@@ -1,0 +1,24 @@
+if status is-interactive
+
+set fish_greeting
+
+alias vim="nvim"
+alias ytv="yt-dlp -f 248+251"
+alias yta="yt-dlp -f 251"
+alias mnv="mplayer -novideo"
+alias fs="import -window root screenshot.png"
+alias e="emacsclient -c -a 'emacs' -nw"
+alias enc="emacs -nw"
+alias mnv="mpv --no-video"
+alias mp="mplayer -novideo"
+alias i3c="nvim $HOME/.config/i3/config"
+alias mnt="$HOME/code/drives.sh"
+alias fc="nvim $HOME/.config/fish/config.fish"
+alias music="cd ~/Fatty/Music"
+alias ncm="ncmpcpp"
+alias in="yay -S"
+alias up="yay -Syu"
+alias pmv="$HOME/Fatty/code/playmusicvideo"
+alias dm="dmenu_run"
+alias x="startx"
+end

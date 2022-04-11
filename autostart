@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xwallpaper --zoom xwallpaper --zoom $HOME/Fatty/Images/wall/Path\ of\ Exile\ Wallpaper\ Act\ II.jpg &
+ckb-next -b &
+
