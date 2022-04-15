@@ -1,4 +1,4 @@
-# My linux configuration dotfiles
+# Showcase of my personal build of DWM
 
 # Desktop
 ![](https://github.com/Luddesnek/dotfiles/blob/master/dwm1.png?raw=true)
