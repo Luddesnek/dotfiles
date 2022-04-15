@@ -1,4 +1,4 @@
-# Showcase of my personal build of dwm
+# My personal dwm build
 
 # Desktop
 ![](https://github.com/Luddesnek/dotfiles/blob/master/dwm1.png?raw=true)
