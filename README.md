@@ -1,9 +1,9 @@
 # My personal dwm build
 
-*Desktop with edgelord wallpaper*
+**edgelord**
 
 ![](https://github.com/Luddesnek/dotfiles/blob/master/dwm1.png?raw=true)
 
-cozy
+**cozy**
 
 ![](https://github.com/Luddesnek/dotfiles/blob/master/dwm3.jpg?raw=true)
