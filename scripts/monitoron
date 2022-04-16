@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xrandr --output DVI-D-0 --on
