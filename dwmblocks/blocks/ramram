@@ -1,0 +1,3 @@
+#!/bin/sh
+
+free -h | tr ' 'i ' ' | awk '/Mem:/' | awk '{print $3}'
