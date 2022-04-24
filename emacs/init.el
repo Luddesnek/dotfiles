@@ -1,9 +1,5 @@
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(cherry-blossom))
  '(custom-safe-themes
    '("3d4df186126c347e002c8366d32016948068d2e9198c496093a96775cc3b3eaa" "3a78cae35163bb71df460ebcfdebf811fd7bc74eaa15428c7e0bccfd4f858d30" "1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default))
@@ -119,7 +115,5 @@
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-
 
 (put 'upcase-region 'disabled nil)
