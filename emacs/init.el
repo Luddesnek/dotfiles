@@ -1,4 +1,3 @@
-
 (custom-set-variables
  '(custom-enabled-themes '(cherry-blossom))
  '(custom-safe-themes
