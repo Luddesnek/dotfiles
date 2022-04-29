@@ -1,4 +1,3 @@
 # dotfiles
 st:
-
-[(https://raw.githubusercontent.com/Luddesnek/dotfiles/master/misc/image.png)]
+<img src="https://raw.githubusercontent.com/Luddesnek/dotfiles/master/misc/image.png" />
