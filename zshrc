@@ -2,7 +2,7 @@ autoload -U colors && colors
 
 # Rainbow
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-#
+
 # Minimal
 PS1="%{$fg[blue]%}{%{$fg[magenta]%}%~%{$fg[blue]%}}%{$reset_color%}$%b "
 # PS1="%{$fg[blue]%}{%{$fg[magenta]%}%n %{$fg[magenta]%}%~%{$fg[blue]%}}%{$reset_color%}$%b "
