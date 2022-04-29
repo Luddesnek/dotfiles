@@ -12,7 +12,3 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
-
-
-
-
