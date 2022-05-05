@@ -1,0 +1,77 @@
+#--------------------------------------
+
+# Functions because why not
+#
+# This one below didn't work as an alias\
+# had it as a shell script then i realized\
+# i could just make it in to a function.
+
+fm()
+{
+  mpv --no-video "$(fzf)" 
+}
+
+scl() 
+{ 
+  mpv "https://soundcloud.com/pwningnoobs1337/likes" 
+}
+
+# This only could have been a script
+
+fzfu()
+{
+  package=$(pacman -Q | fzf) 
+  echo "You've chosen to uninstall $package"
+  cutpackage=$(echo "$package" | cut -d' ' -f1)
+  yay -Rns $cutpackage
+}
+
+#--------------------------------------
+alias pmm="sudo pmm"
+alias date="date "+%R" | lolcat"
+alias mnv="echo "" "
+alias mnv="mpv --no-video"
+alias ytv="yt-dlp f 248+251"
+alias yta="yt-dlp -f 251"
+alias fs="import -window root screenshot.png"
+alias i3c="nvim $HOME/.config/i3/config"
+alias mnt="$HOME/code/drives.sh"
+alias fc="nvim /home/lu/.config/zsh/aliasrc"
+alias pmv="$HOME/Fatty/code/playmusicvideo"
+alias dm="cd ; dmenu_run"
+alias in="yay -S"
+alias un="yay -Rns"
+alias x="startx"
+alias by="byobu"
+alias wii="dolphin-emu-nogui"
+alias mci="sudo make clean install"
+alias cl="\clear"
+alias clc="\clear"
+alias lc="\clear"
+alias sv="sudo nvim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias grep="rg"
+alias cat="bat"
+alias rm="rm -v --preserve-root"
+alias mv="mv -v"
+alias cp="cp -v"
+alias ls="exa --group-directories-first"
+alias sl="exa --group-directories-first"
+alias sls="exa --group-directories-first"
+alias ll="exa --group-directories-first -l"
+alias clear="echo type cl please | lolcat"
+alias dwmconf="nvim /home/lu/Fatty/dots/dwm-test/config.h"
+alias shutoff="systemctl poweroff"
+alias alrc="nvim /home/lu/.aliasrc"
+alias lb="cd /home/lu/.local/bin/"
+alias ub="cd /usr/bin"
+alias cd,="cd ../.."
+alias cd,,="cd ../../.."
+alias arch="strat -r arch"
+alias neofetch="strat arch neofetch"
+alias z="j"
+alias br="nvim $HOME/.bashrc"
+alias zr="nvim $HOME/.zshrc"
+alias ac="nvim $HOME/.config/alacritty/alacritty.yml"
