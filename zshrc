@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 autoload -U colors && colors
-wal -R -n -q
+wal -R -n -q && /usr/bin/clear
 
 #----------------------------------------------
 
@@ -15,7 +15,7 @@ wal -R -n -q
 # %~%{$fg[blue]%}}%{$reset_color%}$%b "
 
 # "$"
-PS1="%{$fg[blue]%}$\
+PS1="%{$fg[yellow]%}$\
  %{$reset_color%}"
 
 #----------------------------------------------
@@ -32,7 +32,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)              
-bindkey '^ ' autosuggest-accept
+#bindkey '^ ' autosuggest-accept
 
 [ -f "$HOME/.aliasrc" ] && source "$HOME/.aliasrc"
 
@@ -40,7 +40,7 @@ source /usr/share/autojump/autojump.zsh
 source /usr/share/zsh/plugins/\
 zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-# source /usr/share/zsh/plugins/\
-# zsh-syntax-highlighting/\
-# zsh-syntax-highlighting.zsh\
-# 2>/dev/null
+source /usr/share/zsh/plugins/\
+zsh-syntax-highlighting/\
+zsh-syntax-highlighting.zsh\
+ 2>/dev/null

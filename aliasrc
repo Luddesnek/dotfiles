@@ -1,5 +1,3 @@
-#--------------------------------------
-
 # Functions because why not
 #
 # This one below didn't work as an alias\
@@ -26,8 +24,21 @@ fzfu()
   yay -Rns $cutpackage
 }
 
+nf()
+{
+  neofetch\
+  --disable icons\
+  --os_arch off\
+  --distro_shorthand on\
+  --memory_percent on | 
+  sed 's/MS-7B48 1.0/GNU\+systemd+arch+ubuntu+gentoo+x11+i3/g'
+}
+
 #--------------------------------------
-alias pmm="sudo pmm"
+
+# Aliases
+
+alias up="sudo pmm -Syu"
 alias date="date "+%R" | lolcat"
 alias mnv="echo "" "
 alias mnv="mpv --no-video"
@@ -41,6 +52,7 @@ alias pmv="$HOME/Fatty/code/playmusicvideo"
 alias dm="cd ; dmenu_run"
 alias in="yay -S"
 alias un="yay -Rns"
+alias py="/usr/bin/clear ; python"
 alias x="startx"
 alias by="byobu"
 alias wii="dolphin-emu-nogui"
