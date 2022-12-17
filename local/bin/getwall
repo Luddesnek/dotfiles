@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cd $HOME/imgs/dw
+page=1
+while [ $page -lt $2 ]
+do 
+   curl -s "https://wallhaven.cc/api/v1/search?q=$1&categories=110&purity=100&sorting=relevance&order=desc&page=$page" | jq '.data[].path' | xargs -I{} aria2c {}
+   page=$(( page + 1))
+done
+

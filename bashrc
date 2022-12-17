@@ -8,4 +8,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 histfile=~/.cache/bashhistory
 
-source /usr/share/autojump/autojump.bash
+set -o vi
+QT_SCALE_FACTOR=1

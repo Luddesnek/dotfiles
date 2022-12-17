@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+picom &
+dunst &
+wal -R &
+$HOME/.local/bin/remap.sh &
+xrdb -load $HOME/.Xresources &
+redshift -O 4900 &
+fcitx -d &
+unclutter --start-hidden --jitter 100 --timeout 2 &
+
+xsetwacom set $(xsetwacom --list devices | awk '/stylus/ {print $9}') Area 4300 2419 8600 4838 &
+xsetwacom set $(xsetwacom --list devices | awk '/stylus/ {print $9}') Rotate half &
+
+ckb-next -b &
+

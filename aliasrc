@@ -1,89 +1,153 @@
-# Functions because why not
-#
-# This one below didn't work as an alias\
-# had it as a shell script then i realized\
-# i could just make it in to a function.
+#!/usr/bin/env sh
 
-fm()
-{
-  mpv --no-video "$(fzf)" 
+weather(){
+   curl -s https://wttr.in/ | head -n 7
 }
 
-scl() 
-{ 
-  mpv "https://soundcloud.com/pwningnoobs1337/likes" 
+gnu(){
+   echo gnu/linux/$(ls /usr/bin/ | sort | awk '{print $1}' | tr '\e\n' '/' )
 }
 
-# This only could have been a script
-
-fzfu()
-{
-  package=$(pacman -Q | fzf) 
-  echo "You've chosen to uninstall $package"
-  cutpackage=$(echo "$package" | cut -d' ' -f1)
-  yay -Rns $cutpackage
+vol(){
+   echo Volume: $(pamixer --get-volume-human)
+}
+wd(){
+   aria2c $(xclip -o -s -c)
+}
+c(){
+   cd "$(< /home/lu/.cache/ctemp | fzf --reverse --height 70%)" 
 }
 
-nf()
-{
-  neofetch\
-  --disable icons\
-  --os_arch off\
-  --distro_shorthand on\
-  --memory_percent on | 
-  sed 's/MS-7B48 1.0/GNU\+systemd+arch+ubuntu+gentoo+x11+i3/g'
+cr(){
+   find ~ -type d > /home/lu/.config/ctemp | lolcat
 }
+
+scl(){ 
+   mpv "https://soundcloud.com/pwningnoobs1337/likes" 
+}
+
+m(){
+   cd hdd/Music ; mpv "$(fzf)" ; cd
+}
+
+mf(){
+   mpv --no-video $HOME/hdd/Music/"$(ls $HOME/hdd/Music | fzf)"
+}
+
+fzfu(){
+   package=$(pacman -Q | fzf) 
+   echo "You've chosen to uninstall $package"
+   cutpackage=$(echo "$package" | cut -d' ' -f1)
+   yay -Rns $cutpackage
+}
+
+
 
 #--------------------------------------
 
 # Aliases
-
-alias up="sudo pmm -Syu"
-alias date="date "+%R" | lolcat"
-alias mnv="echo "" "
-alias mnv="mpv --no-video"
-alias ytv="yt-dlp f 248+251"
-alias yta="yt-dlp -f 251"
+alias i="jp2a --color"
+alias rr="doas reflector --verbose --protocol https --country Sweden,Denmark,Netherlands,France,Germany,Finland --sort rate --save /etc/pacman.d/mirrorlist"
+alias up="doas pacman -Syu"
+alias y="yay" 
+alias sc="systemctl"
+alias yt="ytfzf"
+alias sm="sudo mount"
+alias ta="tmux attach"
+alias shred="shred -uvfzn3"
+alias rb="systemctl reboot"
+alias un="sudo apt remove"
+alias mnv="/usr/bin/mpv --no-video"
+alias fa="ffplay -nodisp"
+alias ytdlpv="yt-dlp f 248+251"
+alias ytdlpa="yt-dlp -f 251-dash"
 alias fs="import -window root screenshot.png"
-alias i3c="nvim $HOME/.config/i3/config"
-alias mnt="$HOME/code/drives.sh"
+alias i3c="vi $HOME/.config/i3/config"
+alias alc="vim $HOME/.config/alacritty/alacritty.yml"
+alias au="nvim /home/lu/.local/bin/autostartrc"
+alias xsr="doas nvim /usr/local/bin/xsrdwm"
 alias fc="nvim /home/lu/.config/zsh/aliasrc"
 alias pmv="$HOME/Fatty/code/playmusicvideo"
 alias dm="cd ; dmenu_run"
-alias in="yay -S"
-alias un="yay -Rns"
-alias py="/usr/bin/clear ; python"
+alias py="clear ; python"
 alias x="startx"
-alias by="byobu"
 alias wii="dolphin-emu-nogui"
 alias mci="sudo make clean install"
-alias cl="\clear"
-alias clc="\clear"
-alias lc="\clear"
-alias sv="sudo nvim"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias grep="rg"
-alias cat="bat"
-alias rm="rm -v --preserve-root"
+alias cl="clear"
+alias clc="clear"
+alias lc="clear"
+alias enc="emacs -nw"
+alias e="emacsclient -nw"
+alias eg="emacsclient "emacs""
+alias chmod="chmod -v"
+alias rm="rm -v -rf --preserve-root"
 alias mv="mv -v"
-alias cp="cp -v"
+alias cp="cp -rv"
+alias rne="rename -v"
+alias grep="grep --color"
+alias egrep="grep --color -E"
 alias ls="exa --group-directories-first"
 alias sl="exa --group-directories-first"
 alias sls="exa --group-directories-first"
 alias ll="exa --group-directories-first -l"
-alias clear="echo type cl please | lolcat"
-alias dwmconf="nvim /home/lu/Fatty/dots/dwm-test/config.h"
+alias dwmconf="vim /home/lu/Fatty/dots/dwm-test/config.h"
 alias shutoff="systemctl poweroff"
-alias alrc="nvim /home/lu/.aliasrc"
+alias alrc="vim /home/lu/.aliasrc"
 alias lb="cd /home/lu/.local/bin/"
+alias src="cd /home/lu/.local/src/"
 alias ub="cd /usr/bin"
-alias cd,="cd ../.."
-alias cd,,="cd ../../.."
-alias arch="strat -r arch"
-alias neofetch="strat arch neofetch"
-alias z="j"
-alias br="nvim $HOME/.bashrc"
-alias zr="nvim $HOME/.zshrc"
-alias ac="nvim $HOME/.config/alacritty/alacritty.yml"
+alias cd,="cd .."
+alias cd,,="cd ../.."
+alias cd,,,="cd ../../.."
+alias br="vim $HOME/.bashrc"
+alias zr="vim $HOME/.zshrc"
+alias ac="vim $HOME/.config/alacritty/alacritty.yml"
+
+alias ki="kitty +kitten icat"
+alias kc="vim $HOME/.cache/wal/colors-kitty.conf"
+
+#alias mpv="devour mpv"
+#alias sxiv="devour sxiv"
+#alias vimb="devour vimb"
+alias bt="sudo bluetoothctl"
+alias nn="firejail --noprofile --net=none"
+alias th="cd /home/lu/Fatty/Games"
+alias xev="xev -rv"
+
+bloat(){
+   echo $(pacman -Q | wc -l) ct Gold
+}
+
+nf(){
+   neofetch
+}
+
+alias visc='vim .config/vis/config'
+alias "pc"="doas vim /etc/polybar/config.ini"
+alias dwmc='cd /home/lu/.local/src/dwm && vim config.h'
+alias ulb="cd /usr/local/bin"
+
+vis60(){
+   sed -i 's/240/60/g' $HOME/.config/vis/config
+}
+vis240(){
+   sed -i 's/60/240/g' $HOME/.config/vis/config
+}
+alias vis="vis60 ; vis"
+
+s(){
+   doas vim $(find /home/lu/.local/bin/ /usr/bin /usr/local/bin /home/lu/.config | fzf --reverse --height 50% --prompt "Edit: ")
+}
+
+se(){
+   emacs $(find /home/lu/.local/bin/ /usr/bin /usr/local/bin /home/lu/.config | fzf --reverse --height 50% --prompt "Edit: ")
+}
+
+fm(){
+cd /home/lu/hdd/Music
+mnv "$(find | fzf --height 50% --reverse --prompt "Play Music : ")"
+}
+
+alias wp="vim $HOME/.local/src/dwm-pywal/config.h"
+alias h="< $HOME/.cache/zshhistory | sort | uniq | fzf"
+alias hc="< $HOME/.cache/zshhistory | sort | uniq | fzf | xclip -se c"

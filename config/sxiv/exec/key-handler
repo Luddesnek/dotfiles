@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+while read file
+do
+   case "$1" in 
+
+"w") wal -i "$file" 
+pywalfox update
+sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+(doas make clean install --directory=/home/lu/.local/src/dmenu)
+(doas make clean install --directory=/home/lu/.local/src/dwm-pywal)
+pkill dwm && dwm &
+pkill xsrdwm
+exec xsrdwm &
+;;      
+      
+   "d") mv "$file" $HOME/.trash ;;
+      
+   "p") mv "$file" $HOME/hdd/pix ;;
+
+   "c") cp "$file" $HOME/hdd/pix ;;
+
+   "3") xwallpaper --output DVI-D-0 --zoom "$file" ;;
+   
+   "1") xwallpaper --output DP-1 --zoom "$file" ;;
+
+   "2") xwallpaper --output HDMI-0 --zoom "$file" ;;
+
+   esac
+done
+

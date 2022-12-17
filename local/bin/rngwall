@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+wal -i "$HOME/imgs/$(ls imgs | shuf | head -n1)"
+pywalfox update
+sed -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+(doas make clean install --directory=/home/lu/.local/src/dmenu)
+(doas make clean install --directory=/home/lu/.local/src/dwm-pywal)
+killall xsrdwm
+pkill dwm && dwm
+xsrdwm &
+
