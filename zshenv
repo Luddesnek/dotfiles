@@ -1,0 +1,9 @@
+#export SDL_IM_MODULE='fcitx'
+#export XIM_PROGRAM='/usr/bin/fcitx'
+#export LANG=jp_JP.UTF-8
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export QT5_IM_MODULE='fcitx'
+export xim='fcitx'
+#export LC_CTYPE=jp_JP.UTF-8
+export XMODIFIERS='@im=fcitx'
