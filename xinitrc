@@ -1,8 +1,7 @@
 #!/bin/sh
-
-exec $HOME/.local/bin/autostart &
-i3
-#emacs --client
-#$HOME/.local/bin/remap.sh &
-
-
+$HOME/.local/bin/autostartrc &
+doas mount /dev/sda3 /home/lu/hdd
+doas mount /dev/nvme0n1p2 /home/lu/ssd
+dwm &
+exec rubyxsr & 
+sleep infinity
