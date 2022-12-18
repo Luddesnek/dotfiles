@@ -1,0 +1,7 @@
+#!/bin/sh
+
+mv ~/Downloads/*osz ~/tmp/Songs
+cd ~/tmp/Songs
+ext *osz
+for file in *osz; do echo $file; done\
+   | xargs -I{} rm "{}"

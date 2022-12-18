@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+#kill "$(pstree -lp | grep -- -xsrdwm\([0-9] | sed "s/.*sleep(\([0-9]\+\)).*/\1/")"
+kill "$(pstree -lp | grep -- -ruby\([0-9] | sed "s/.*sleep(\([0-9]\+\)).*/\1/")"

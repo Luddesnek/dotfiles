@@ -1,0 +1,2 @@
+(doas make clean install --directory=/home/lu/.local/src/dwm-pywal)
+(doas make clean install --directory=/home/lu/.local/src/dmenu)

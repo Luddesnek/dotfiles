@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if
+   [[ $(printf "Yes\nNo" | dmenu -l 2 -p "Power off computer?") == "Yes" ]]
+then
+   notify-send "Bye, if you can see this" && systemctl poweroff
+else
+   notify-send "You have choosen to stay, Please leave"
+fi

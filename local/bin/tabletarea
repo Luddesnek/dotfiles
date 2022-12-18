@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xsetwacom set $(xsetwacom --list devices | awk '/stylus/ {print $9}') Area 4300 2419 8600 4838 &
+xsetwacom set $(xsetwacom --list devices | awk '/stylus/ {print $9}') Rotate half &

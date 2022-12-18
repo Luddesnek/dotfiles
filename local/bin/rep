@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+
+print(){
+printf "$1\n"
+}
+
+emergancy.protocol(){
+ 
+   world=0
+  
+   for progress in $(seq 1 100)
+   do
+   print "Starting: $progress%%"
+   sleep 0.01
+   done
+   
+   run.emergancy.protocol(){
+      clear
+      print "\n > Run Emergancy Protocol"
+      print " > date `date "+%Y/%m/%d"`"
+      print " > user : [$USER]\n\n"
+     
+      world.execute(){
+         print "   > executing."
+         sleep 1
+         print "   > executing.."
+         sleep 0.1
+         print "   > executing..."
+         sleep 0.2
+         print "   > .."
+         print "   > e.e.u.ed"
+         sleep 0.4
+         print "   > e.ecu.ed"
+         sleep 0.2
+         print "   > exe.u.ed"
+         print "   > ex.cu.ed"
+         sleep 0.1
+         print "   > ex.c.ted"
+         print "   > ex.cuted"
+         sleep 1
+         exit 0
+      }
+    
+      enter_world.execute(){
+         print "   > enter world.execute(me);"
+      }
+      
+      prompt(){  
+         printf " "
+         read input
+      }
+     
+      check_world(){
+         world=$((world + 1))
+      }
+      
+      while true
+      do
+         prompt;
+         if [ "$input" = "execution" ]
+         then
+            if [ $world -gt 11 ]
+            then
+               enter_world.execute;
+               print "     ...to terminate"
+                  while true
+                  do
+                     prompt
+                     if [ "$input" != "world.execute(me);" ]
+                     then
+                        enter_world.execute;
+                     else
+                        world.execute;
+                     fi
+                  done
+            elif [ $world -gt 10 ]
+            then
+               check_world && print "   > last world reached."
+            else
+               check_world && print "   > succeeded in executing world."
+            fi
+         elif [ "$input" = "world.execute(me);" ]
+         then
+            world.execute;
+         elif [ "$input" = "clear" ]
+         then
+            run.emergancy.protocol
+         else
+            print "   > error: command not found"
+         fi
+      done
+   }
+   run.emergancy.protocol;
+}
+
+print "\n > Welcome to the simulation"
+while true
+do
+   printf "\n : " && read input
+   if [ "$input" = "help" ]
+   then
+      printf "
+      help: this command
+      exit: close the application
+      start: start simulation
+      clear: clears the screen
+      rep: error"
+
+   elif [ "$input" = "exit" ]
+   then
+      exit 0
+   elif [ "$input" = "start" ]
+   then
+      exec dwarffortress
+   elif [ "$input" = "clear" ]
+   then
+      clear
+   elif [ "$input" = "rep" ]
+   then
+      emergancy.protocol;
+   else 
+      print "\n ERROR"
+   fi
+done

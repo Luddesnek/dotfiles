@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+while true
+do
+   mpv --no-video "$(\
+   for song in *
+   do echo $song
+   done | shuf | head -n1)"
+   read input
+      if [ $input = q ]
+      then
+         exit 0
+      else
+         :
+      fi
+done

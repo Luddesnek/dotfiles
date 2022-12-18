@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# who needs ls
+
+cd ~/hdd/Music
+cd ~/hdd/Music/"\
+`for why in *
+   do echo "$why"
+done | fzf --height 60%
+`"
+
+for song in *
+   do echo "$song"
+done\
+   | fzf --height 99%\
+   | sed 's/\\/\\\\/'\
+   | sed "s/'/\'/g"\
+   | xargs -I{} mpv "{}"
+

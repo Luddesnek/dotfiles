@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+choices="\
+DuckDuckGo
+Google
+YouTube
+MyAnimeList"
+
+   case $(echo -e "$choices" | dmenu -p "Search:" -i) in
+         DuckDuckGo) firefox "https://duckduckgo.com/?q=$(dmenu -p "DuckDuckGo - Search :" <&-)" 
+         ;;
+
+         Google) chromium "https://google.com/?q=$(dmenu -p "Google - Search :" <&-)" 
+         ;;
+
+         YouTube) firefox "youtube.com/results?search_query=$(dmenu -p "YouTube - Search :" <&-)" 
+         ;;
+
+         MyAnimeList) firefox "https://myanimelist.net/search/all?q=$(dmenu -p "Search - Anime :" <&-)"
+   esac
